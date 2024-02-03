@@ -15,10 +15,11 @@ export class App extends Component {
   };
 
   componentDidMount() {
+
     const savedContacts = localStorage.getItem('contacts');
 
     if (savedContacts !== null) {
-      this.setState({ contacts: JSON.parse(savedContacts) });
+      this.setState({contacts: JSON.parse(savedContacts)});
     } else {
       this.setState({
         contacts: [
@@ -27,17 +28,18 @@ export class App extends Component {
           { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
           { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
         ],
-      });
+      })
     }
   }
 
   componentDidUpdate(_prevProps, prevState) {
-    const { contacts } = this.state;
+    const {contacts} = this.state;
 
-    if (contacts !== prevState.contacts) {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
+    if (contacts !=== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(contacts))
     }
   }
+
 
   addContact = newContact => {
     this.setState(prevState => ({
